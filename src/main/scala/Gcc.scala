@@ -8,6 +8,6 @@ case object GCC extends Bundle() {
   val metadata = generated.metadata.GCC
 
   def install[D <: AnyDistribution](distribution: D): InstallResults =
-    Seq("yum", "install", "gcc", "-y") ->- success(metadata+" is installed")
+    "yum install gcc -y" ->- success(metadata+" is installed")
 
 }
